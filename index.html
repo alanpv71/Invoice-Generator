@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div>
+      <label>Company:</label>
+      <select id="company">
+        <option value="">Select Company</option>
+        <option value="evento.blr">Evento.blr</option>
+        <option value="candela">Candela Stories</option>
+        <option value="aditi">Aditi Makeover</option>
+      </select>
+      <div id="company-address" class="company-address"></div>
+    </div>
+
+    <div class="right-top">
+      <div>
+        <label>Date:</label>
+        <input type="date" id="invoice-date">
+      </div>
+      <div>
+        <label>Type:</label>
+        <select id="invoice-type">
+          <option value="Invoice">Invoice</option>
+          <option value="Quotation">Quotation</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="bill-to">
+    <label>Bill To:</label>
+    <input type="text" id="client-address" placeholder="Client Address">
+  </div>
+
+  <div class="table-wrapper">
+    <table id="invoice-table">
+      <thead>
+        <tr>
+          <th>Sl No</th>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="buttons">
+    <button id="add-item">Add Item</button>
+    <button id="clear-all">Clear All</button>
+  </div>
+
+  <div class="totals">
+    <div id="grand-total"></div>
+    <div id="advance-row" style="display:none"></div>
+    <div id="net-payable"></div>
+  </div>
+
+  <div class="notes">
+    <label>Notes:</label>
+    <textarea id="notes" placeholder="Additional comments..."></textarea>
+  </div>
+
+  <div class="buttons">
+    <button id="preview">Preview</button>
+    <button id="save-generate">Save & Generate</button>
+  </div>
+</div>
+
+<!-- Firebase Config & Modular SDK -->
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="script.js"></script>
+</body>
+</html>

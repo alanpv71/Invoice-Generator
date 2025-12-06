@@ -1,0 +1,22 @@
+
+// type="module"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBsaAUWc2vZDRw3ES-2DxgEgw8r4YzVYYs",
+    authDomain: "invoice-generator-25c10.firebaseapp.com",
+    databaseURL: "https://invoice-generator-25c10-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "invoice-generator-25c10",
+    storageBucket: "invoice-generator-25c10.firebasestorage.app",
+    messagingSenderId: "208288114344",
+    appId: "1:208288114344:web:c6eac8ef0ea19112d5c49d",
+    measurementId: "G-GJS9DL9YYV"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// Expose globally for script.js
+window.db = db;
