@@ -1,155 +1,138 @@
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 15px;
+  padding: 20px;
   background: #f9f9f9;
 }
 
 .container {
-  width: 100%;
   max-width: 900px;
   margin: auto;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
 }
 
-/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 15px;
+  align-items: flex-start;
 }
 
 .company-address {
-  margin-top: 6px;
-  font-size: 0.88em;
+  margin-top: 5px;
+  font-size: 0.9em;
   color: #555;
 }
 
 .right-top {
   text-align: right;
+  margin-top: 10px;
 }
 
-.right-top label {
-  display: block;
-}
-
-/* BILL TO */
 .bill-to {
   margin-top: 20px;
 }
 
-input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-textarea {
-  height: 85px;
-  resize: none;
-}
-
-/* TABLE */
 .table-wrapper {
-  margin-top: 20px;
+  width: 100%;
   overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 650px;
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-th {
-  background: #eee;
-  font-size: 0.9em;
-}
-
-/* BUTTONS */
-.buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
   margin-top: 20px;
 }
 
-button {
-  padding: 12px;
-  font-size: 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background: #e0e0e0;
-  transition: 0.25s ease;
+table, th, td {
+  border: 1px solid #ccc;
 }
 
-button:hover {
-  background: #ccc;
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+input, select, textarea, button {
+  padding: 8px;
+  margin: 5px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .buttons button {
-  flex: 1 1 160px;
+  flex: 1 1 150px;
 }
 
-/* TOTALS */
 .totals {
   margin-top: 20px;
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
 }
 
-#net-payable {
-  font-size: 18px;
-  color: #222;
-}
+/* ========================== */
+/* 📱 MOBILE TABLE RESPONSIVE */
+/* ========================== */
 
-/* MOBILE */
 @media (max-width: 600px) {
 
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+  table thead {
+    display: none;
   }
 
-  .right-top {
+  table, tbody, tr, td {
+    display: block;
     width: 100%;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 2px solid #e3e3e3;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fafafa;
+  }
+
+  td {
+    position: relative;
+    text-align: right;   /* Label left, value right */
+    padding-left: 50%;
+    border: none !important;
+  }
+
+  td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
     text-align: left;
-  }
-
-  th, td {
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  button {
-    width: 100%;
-    flex: none;
+    font-weight: bold;
+    color: #333;
   }
 
   .totals {
     align-items: flex-start;
-    text-align: left;
+    gap: 10px;
   }
 
-  table {
-    min-width: 550px;
+  button {
+    width: 100%;
   }
 }
-
