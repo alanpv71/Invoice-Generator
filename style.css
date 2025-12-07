@@ -38,9 +38,14 @@ body {
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
-  /* optionally: add some bottom padding so scrollbar isn’t too cramped */
-  padding-bottom: 1rem;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
 }
+
+#invoice-table {
+  min-width: 600px; /* Keeps contents readable on narrow screens */
+}
+
 
 table {
   width: 100%;
