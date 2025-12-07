@@ -162,11 +162,29 @@ document.getElementById('preview').addEventListener('click', ()=>{
   newWindow.document.write(html);
 });
 
+function generatePDF(filename) {
+  const element = document.querySelector('.container'); // Export full invoice UI
+  const opt = {
+    margin:        10,
+    filename:      filename + '.pdf',
+    image:         { type: 'jpeg', quality: 0.98 },
+    html2canvas:   { scale: 2 },
+    jsPDF:         { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak:     { mode: ['avoid-all', 'css', 'legacy'] }
+  };
+  return html2pdf().set(opt).from(element).save();
+}
+
+
 // Save & Generate
 document.getElementById('save-generate').addEventListener('click', () => {
   const data = collectData();
   const invoiceRef = ref(db, 'invoices/' + data.invoiceID);
+
   set(invoiceRef, data)
-    .then(() => alert('Saved successfully with ID: ' + data.invoiceID))
+    .then(() => {
+      alert('Saved! Generating PDF...');
+      return generatePDF(data.invoiceID);
+    })
     .catch(err => alert('Error saving: ' + err));
 });
