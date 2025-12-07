@@ -36,11 +36,10 @@ body {
 }
 
 .table-wrapper {
-  width: 100%;
   overflow-x: auto;
-  padding-bottom: 10px;
-  -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
+
 
 #invoice-table {
   min-width: 600px; /* Keeps contents readable on narrow screens */
