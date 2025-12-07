@@ -5,13 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invoice Generator</title>
 <link rel="stylesheet" href="style.css">
-  <!-- PDF Export Library -->
+
+<!-- PDF Export Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-<!-- Firebase Config as module -->
+<!-- Firebase & Main Script as module -->
 <script type="module" src="firebase-config.js"></script>
-
-<!-- Main Script as module -->
 <script type="module" src="script.js"></script>
 
 <style>
@@ -30,13 +29,11 @@
     background: #fff;
   }
 
-  /* Purple theme for header/footer only in PDF */
   .header, .footer {
     background-color: #6a4fb0 !important;
     color: #fff !important;
   }
 
-  /* Table formatting in PDF */
   #invoice-table th {
     background: #eee !important;
     color: #000 !important;
@@ -45,11 +42,10 @@
   button, select, input { display: none !important; }
 }
 </style>
-
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="invoice-container">
   <div class="header">
     <div>
       <label>Company:</label>
@@ -104,8 +100,7 @@
   </div>
 
   <div class="totals">
-    <div id="grand-total"></div>
-    <div id="advance-row" style="display:none"></div>
+    <div id="grand-total">Grand Total: 0</div>
     <div id="net-payable"></div>
   </div>
 
@@ -118,14 +113,11 @@
     <button id="preview">Preview</button>
     <button id="save-generate">Save & Generate</button>
   </div>
+
   <div class="footer">
-  <p>Thank you for your business!</p>
+    <p>Thank you for your business!</p>
+  </div>
 </div>
 
-</div>
-
-<!-- Firebase Config & Modular SDK -->
-<!script type="module" src="firebase-config.js"><!/script>
-<!script type="module" src="script.js"><!/script>
 </body>
 </html>
