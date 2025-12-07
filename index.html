@@ -8,6 +8,12 @@
   <!-- PDF Export Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+<!-- Firebase Config as module -->
+<script type="module" src="firebase-config.js"></script>
+
+<!-- Main Script as module -->
+<script type="module" src="script.js"></script>
+
 <style>
 /* ---------- PRINT / PDF STYLING ---------- */
 @media print {
@@ -119,7 +125,7 @@
 </div>
 
 <!-- Firebase Config & Modular SDK -->
-<script type="module" src="firebase-config.js"></script>
-<script type="module" src="script.js"></script>
+<!script type="module" src="firebase-config.js"><!/script>
+<!script type="module" src="script.js"><!/script>
 </body>
 </html>
