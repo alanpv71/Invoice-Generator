@@ -143,3 +143,11 @@ button {
     width: 100%;
   }
 }
+
+/* Fix mobile data-labels */
+#invoice-table td:nth-child(1)::before { content: "Sl No"; }
+#invoice-table td:nth-child(2)::before { content: "Description"; }
+#invoice-table td:nth-child(3)::before { content: "Qty"; }
+#invoice-table td:nth-child(4)::before { content: "Price"; }
+#invoice-table td:nth-child(5)::before { content: "Total"; }
+
