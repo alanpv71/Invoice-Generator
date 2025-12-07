@@ -38,6 +38,8 @@ body {
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
+  /* optionally: add some bottom padding so scrollbar isn’t too cramped */
+  padding-bottom: 1rem;
 }
 
 table {
