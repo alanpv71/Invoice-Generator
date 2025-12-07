@@ -151,3 +151,31 @@ button {
 #invoice-table td:nth-child(4)::before { content: "Price"; }
 #invoice-table td:nth-child(5)::before { content: "Total"; }
 
+.pdf-mode {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 15mm;
+  background: #fff;
+}
+
+/* Purple header only in PDF */
+.pdf-mode .header,
+.pdf-mode .footer {
+  background-color: #6a4fb0 !important;
+  color: #fff !important;
+}
+
+/* Table always fits neatly */
+.pdf-mode table {
+  width: 100% !important;
+  border-collapse: collapse;
+}
+
+.pdf-mode th,
+.pdf-mode td {
+  font-size: 12px;
+  word-wrap: break-word;
+  padding: 6px;
+}
+
+
