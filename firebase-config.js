@@ -12,7 +12,7 @@ const firebaseConfig = {
   authDomain: "invoice-generator-25c10.firebaseapp.com",
   databaseURL: "https://invoice-generator-25c10-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "invoice-generator-25c10",
-  storageBucket: "invoice-generator-25c10.firebasestorage.app",
+  storageBucket: "invoice-generator-25c10.appspot.com",
   messagingSenderId: "208288114344",
   appId: "1:208288114344:web:c6eac8ef0ea19112d5c49d",
   measurementId: "G-GJS9DL9YYV"
