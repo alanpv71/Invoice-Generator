@@ -5,6 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invoice Generator</title>
 <link rel="stylesheet" href="style.css">
+  <!-- PDF Export Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+/* ---------- PRINT / PDF STYLING ---------- */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    background: white;
+  }
+
+  .container {
+    width: 210mm;         /* A4 width */
+    min-height: 297mm;    /* A4 height */
+    padding: 15mm;
+    margin: auto;
+    background: #fff;
+  }
+
+  /* Purple theme for header/footer only in PDF */
+  .header, .footer {
+    background-color: #6a4fb0 !important;
+    color: #fff !important;
+  }
+
+  /* Table formatting in PDF */
+  #invoice-table th {
+    background: #eee !important;
+    color: #000 !important;
+  }
+
+  button, select, input { display: none !important; }
+}
+</style>
+
 </head>
 <body>
 
